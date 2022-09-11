@@ -35,7 +35,7 @@ insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA05','ECO','89898989
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898984','60000','CJB');
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR');
 
-create table student(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
+
 
 create table student AS SELECT std_id,salary from sub;
 select * from student OREDR BY std_id; 
