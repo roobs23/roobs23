@@ -36,10 +36,10 @@ insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR');
 
 
-
+select COUNT(std_id),place from sub GROUP BY place;
 create table student AS SELECT std_id,salary from sub;
 select * from student OREDR BY std_id; 
-select COUNT(std_id),place from student GROUP BY place;
+
 
 -----------------------------------------------------------------------------------
 create table subs(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
