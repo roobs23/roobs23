@@ -1,4 +1,4 @@
-create table stdz_info(name varchar2(13)NOT NULL,roll_no varcahr2(8)PRIMARY KEY,ph_no number(10)UNIQUE);
+create table stdz_info(name varchar2(13)NOT NULL,roll_no varchar2(8)PRIMARY KEY,ph_no number(10)UNIQUE);
 insert into stdz_info(name,roll_no,ph_no)VALUES('AAA','21vnm001','1234554321');
 insert into stdz_info(name,roll_no,ph_no)VALUES('BBB','21vnm002','1234554322'); 
 insert into stdz_info(name,roll_no,ph_no)VALUES('CCC','21vnm003','1234554323');
