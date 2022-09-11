@@ -23,30 +23,9 @@ insert into info_stdz(name,roll_no,phone)SELECT name,roll_no,phone FROM stdz_inf
 UPDATE info_stdz SET phone='9843792231' WHERE name='AAA';
 select * from info_stdz;
 -------------------------------------------------------
-create table student(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA01','AKIL','8989898989','10000','TPR');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA02','BALA','8989898988','20000','CJB');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA03','CHERRY','8989898987','30000','TPR');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA04','DOGE','8989898986','40000','CJB');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA05','ECO','8989898985','50000','TPR');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898984','60000','CJB');
-insert into student(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR');
 
 
-create table sub(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA01','AKIL','8989898989','10000','TPR');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA02','BALA','8989898988','20000','CJB');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA03','CHERRY','8989898987','30000','TPR');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA04','DOGE','8989898986','40000','CJB');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA05','ECO','8989898985','50000','TPR');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898984','60000','CJB');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR')
 
-select * from student
-select * from student OREDR BY std_id; 
-select COUNT(std_id),place from student GROUP BY place;
-
------------------------------------------------------------------------------------
 create table sub(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA01','AKIL','8989898989','10000','TPR');
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA02','BALA','8989898988','20000','CJB');
@@ -55,9 +34,25 @@ insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA04','DOGE','8989898
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA05','ECO','8989898985','50000','TPR');
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898984','60000','CJB');
 insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA08','HILLU','8989898982','80000','CJB');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA09','ISAC','8989898981','90000','TPR');
-insert into sub(std_id,name,phone,salary,place)VALUES('PSGNMA10','JACK','8989898980','100000','CJB');
+
+create table student(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
+
+create table student AS SELECT std_id,salary from sub;
+select * from student OREDR BY std_id; 
+select COUNT(std_id),place from student GROUP BY place;
+
+-----------------------------------------------------------------------------------
+create table subs(std_id varchar2(8) NOT NULL,name varchar2(13) PRIMARY KEY,phone number(6)UNIQUE,salary number(6)NOT NULL,place varchar(3)NOT NULL);
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA01','AKIL','8989898989','10000','TPR');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA02','BALA','8989898988','20000','CJB');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA03','CHERRY','8989898987','30000','TPR');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA04','DOGE','8989898986','40000','CJB');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA05','ECO','8989898985','50000','TPR');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA06','FIGO','8989898984','60000','CJB');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA07','GROGE','8989898983','70000','TPR');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA08','HILLU','8989898982','80000','CJB');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA09','ISAC','8989898981','90000','TPR');
+insert into subs(std_id,name,phone,salary,place)VALUES('PSGNMA10','JACK','8989898980','100000','CJB');
 select * from sub;
 select AVG(salary)"AVERAGE PAY" from sub;
 select MIN(salary)"MINIMUM PAY" from sub;
