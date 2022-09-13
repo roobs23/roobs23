@@ -1,0 +1,79 @@
+[@1]
+<body><% out.println(new java.util.Date());%><h3> File Upload </h3>Select a file to upload: </br><script>
+function myfunction(){alert("File Uploaded")}</script><form enctype="multipart/form-data"><input type ="file" name="file" size="50" />
+<br /><input type="submit" value="Upload File" onclick="myfunction()" /></form></body>
+---------
+[@2]
+<body>
+        
+        
+        
+<form  action="lander.jsp" method="GET"><br>
+<br><br><br><br><br><br><br><br>
+<h1>USER CREDENTIAL</h1>
+   
+         <P id="1">
+ ENTER THE FIRTS NAME:<BR>
+</P><center>
+                
+<input type="text" maxlength="10" id="Fristname" name="Fristname"  placeholder="FIRST NAME"></center>
+ 
+           <P id="2">
+                ENTER THE LAST NAME:<BR>
+            </P><center>
+                
+<input type="text" maxlength="10" id="lastname" name="lastname"  placeholder="LAST NAME"></center><br>
+
+ <input type="SUBMIT" value="SUBMIT">
+</center></form>
+</body>
+[@2||]
+ <body><br><br><br><br><br><br><br><br><p><b>FIRST NAME:</b>
+<br><br><br>
+ <%=request.getParameter("Fristname")%><BR><br><br><b>
+  
+LAST NAME:</b><br><br><br><%=request.getParameter("lastname")%>
+</P></body>
+----------
+[@3]
+<body>
+<form name="testform" action="newjsgetparam.jsp"><label><h1>ENTER THE
+ TEXT AND SUBMIT</h1><br></label><input type="text" id="testparam" name="testparam">
+<br><BR><br><input type="submit" value="submit ?"></form>
+</body>
+[@3||]
+<body><%String val=request.getParameter("testparam");%><br><h1>ENTERED TEXT:</h1><br><%=val%>
+</body>
+----------
+[@4]
+<body><br><br><br><br><br>
+<% Integer hitsCounter=(Integer) application.getAttribute("hitCounter");
+
+
+if(hitsCounter==null || hitsCounter==0)
+
+{
+out.println("WELCOME TO MY WEBPAGE");
+  hitsCounter =1;
+ }
+ else{
+out.println("WELCOME BACK!"); hitsCounter +=1;
+}
+ 
+application.setAttribute("hitCounter", hitsCounter);%>
+<center><P>TOTAL NUMBER OF:<br><%=hitsCounter%>
+ </P></center></body>
+----------
+[@5]
+<body>
+<center><P><% Integer counter=(Integer)session.getAttribute("counter");
+if(counter==null){
+counter=new Integer(1);}
+  else
+  {
+counter=new Integer(counter.intValue()+1);}
+session.setAttribute("counter",counter);%></p>
+<p id="f">USING SESSION TO TRACK THE USER</P><br>
+<p id="x"session ID:<%=session.getId()%><br>SESSION CREATION TIME:<br><%=new Date(session.getCreationTime())%><br><BR>
+ LAST ACCESSED TIME:<br><%=new Date (session.getLastAccessedTime())%><br><br>NUMBER OF TIMES YOU VISITED:<br><%=counter%></p></center>
+</body>
